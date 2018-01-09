@@ -13,7 +13,7 @@ class ArticleModel extends CI_Model {
   }
   
   // Fungsi untuk validasi form
-  public function validation($mode){
+  public function validation(){
     $this->load->library('form_validation'); // Load library form_validation untuk proses validasinya
     
     $this->form_validation->set_rules('input_title', 'Title', 'required|max_length[45]');
@@ -37,7 +37,7 @@ class ArticleModel extends CI_Model {
     $this->db->insert('articles', $data); // Untuk mengeksekusi perintah insert data
   }
   
-  // Fungsi untuk melakukan ubah data ID
+  // Fungsi untuk melakukan ubah data berdasarkan ID
   public function edit($id){
     $data = array(
       "title" => $this->input->post('input_title'),
