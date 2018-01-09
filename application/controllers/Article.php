@@ -5,6 +5,7 @@ class Article extends CI_Controller {
     parent::__construct();
     
     $this->load->model('ArticleModel'); // Load ArticleModel ke controller ini
+    $this->load->model('CategoryModel');
   }
   
   public function index(){
@@ -20,7 +21,8 @@ class Article extends CI_Controller {
       }
     }
     
-    $this->load->view('article/add');
+    $data['categories'] = $this->CategoryModel->view();
+    $this->load->view('article/add', $data);
   }
   
   public function edit($id){
@@ -32,6 +34,7 @@ class Article extends CI_Controller {
     }
     
     $data['article'] = $this->ArticleModel->view_by_id($id);
+    $data['categories'] = $this->CategoryModel->view();
     $this->load->view('article/edit', $data);
   }
   

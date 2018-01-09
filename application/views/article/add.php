@@ -6,15 +6,25 @@
     <table cellpadding="8">
     <tr>
         <td>TITLE</td>
-        <td><input type="text" name="input_title" value="<?php echo set_value('input_title'); ?>"></td>
+        <td><input type="text" name="input_title"></td>
     </tr>
     <tr>
         <td>CATEGORY</td>
-        <td><input type="text" name="input_category" value="<?php echo set_value('input_category'); ?>"></td>
+        <td>
+            <select name="input_category">
+                <?php
+                    if(!empty($categories)){
+                        foreach($categories as $category){
+                            echo "<option value='". $category->id ."' >" . $category->title . "</option>";
+                        }
+                    }
+                ?>
+            </select>
+        </td>
     </tr>
     <tr>
         <td>CONTENT</td>
-        <td><textarea name="input_content"><?php echo set_value('input_content'); ?></textarea></td>
+        <td><textarea name="input_content"></textarea></td>
     </tr>
     </table>
     

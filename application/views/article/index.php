@@ -1,6 +1,7 @@
 <h1>Article</h1>
 <hr>
-<a href='<?php echo base_url("article/add"); ?>'>ADD</a><br><br>
+<a href='<?php echo base_url("article/add"); ?>'>ADD ARTICLE</a><br>
+<a href='<?php echo base_url("category/add"); ?>'>ADD CATEGORY</a><br>
 <table border="1" cellpadding="7" width="600">
     <tr>
     <th>ID</th>
