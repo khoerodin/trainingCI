@@ -35,7 +35,7 @@ class Article extends CI_Controller {
     $this->load->view('article/edit', $data);
   }
   
-  public function hapus($id){
+  public function delete($id){
     $this->ArticleModel->delete($id); // Panggil fungsi delete() yang ada di ArticleModel.php
     redirect('article');
   }

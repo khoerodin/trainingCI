@@ -1,15 +1,15 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class ArticleModel extends CI_Model {
+class CategoryModel extends CI_Model {
   // Fungsi untuk menampilkan semua data
   public function view(){
-    return $this->db->get('articles')->result();
+    return $this->db->get('categories')->result();
   }
   
   // Fungsi untuk menampilkan data berdasarkan ID
   public function view_by_id($id){
     $this->db->where('id', $id);
-    return $this->db->get('articles')->row();
+    return $this->db->get('categories')->row();
   }
   
   // Fungsi untuk validasi form
@@ -17,8 +17,6 @@ class ArticleModel extends CI_Model {
     $this->load->library('form_validation'); // Load library form_validation untuk proses validasinya
     
     $this->form_validation->set_rules('input_title', 'Title', 'required|max_length[45]');
-    $this->form_validation->set_rules('input_category', 'Category', 'required');
-    $this->form_validation->set_rules('input_content', 'Content', 'required');
       
     if($this->form_validation->run()) // Jika validasi benar
       return TRUE; // Maka kembalikan hasilnya dengan TRUE
@@ -29,29 +27,25 @@ class ArticleModel extends CI_Model {
   // Fungsi untuk melakukan simpan data ke tabel
   public function save(){
     $data = array(
-      "title" => $this->input->post('input_title'),
-      "category_id" => $this->input->post('input_category'),
-      "content" => $this->input->post('input_content')
+      "title" => $this->input->post('input_title')
     );
     
-    $this->db->insert('articles', $data); // Untuk mengeksekusi perintah insert data
+    $this->db->insert('categories', $data); // Untuk mengeksekusi perintah insert data
   }
   
   // Fungsi untuk melakukan ubah data berdasarkan ID
   public function edit($id){
     $data = array(
-      "title" => $this->input->post('input_title'),
-      "category_id" => $this->input->post('input_category'),
-      "content" => $this->input->post('input_content')
+      "title" => $this->input->post('input_title')
     );
     
     $this->db->where('id', $id);
-    $this->db->update('articles', $data); // Untuk mengeksekusi perintah update data
+    $this->db->update('categories', $data); // Untuk mengeksekusi perintah update data
   }
   
   // Fungsi untuk melakukan menghapus data berdasarkan ID
   public function delete($id){
     $this->db->where('id', $id);
-    $this->db->delete('articles'); // Untuk mengeksekusi perintah delete data
+    $this->db->delete('categories'); // Untuk mengeksekusi perintah delete data
   }
 }

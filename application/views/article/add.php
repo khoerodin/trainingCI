@@ -1,4 +1,4 @@
-<h1>Form Tambah Data Mahasiswa</h1>
+<h1>ADD ARTICLE</h1>
 <hr>
 <!-- Menampilkan Error jika validasi tidak valid -->
 <div style="color: red;"><?php echo validation_errors(); ?></div>

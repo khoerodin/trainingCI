@@ -7,7 +7,7 @@
     <th>TITLE</th>
     <th>CATEGORY</th>
     <th>CONTENT</th>
-    <th colspan="2">ACTION</th>
+    <th>ACTION</th>
     </tr>
     <?php
         if(!empty($articles)){
@@ -16,10 +16,9 @@
                 echo "<tr>
                 <td>".$article->id."</td>
                 <td>".$article->title."</td>
-                <td>".$article->category."</td>
+                <td>".$article->category_id."</td>
                 <td>".$article->content."</td>
-                <td><a href='".base_url("article/edit/".$data->id)."'>EDIT</a></td>
-                <td><a href='".base_url("article/delete/".$data->id)."'>DELETE</a></td>
+                <td><a href='".base_url("article/edit/".$article->id)."'>EDIT</a> | <a href='".base_url("article/delete/".$article->id)."'>DELETE</a></td>
                 </tr>";
             }
 
