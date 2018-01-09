@@ -30,7 +30,7 @@ class ArticleModel extends CI_Model {
   public function save(){
     $data = array(
       "title" => $this->input->post('input_title'),
-      "category" => $this->input->post('category'),
+      "category" => $this->input->post('input_category'),
       "content" => $this->input->post('input_content')
     );
     
@@ -41,7 +41,7 @@ class ArticleModel extends CI_Model {
   public function edit($id){
     $data = array(
       "title" => $this->input->post('input_title'),
-      "category" => $this->input->post('category'),
+      "category" => $this->input->post('input_category'),
       "content" => $this->input->post('input_content')
     );
     
