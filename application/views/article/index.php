@@ -24,7 +24,7 @@
             }
 
         }else{
-            echo "<tr><td align='center' colspan='76'>NO DATA FOUND</td></tr>";
+            echo "<tr><td align='center' colspan='5'>NO DATA FOUND</td></tr>";
         }
     ?>
 </table>
